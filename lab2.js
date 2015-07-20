@@ -71,7 +71,6 @@ hoursSpentInDowington = blob.hours;
 // of hours the blob needs to ooze its way through that town.
 
 function hoursToOoze(population, peoplePerHour) {
-  /*jshint validthis: true */
   this.population = population;
   this.peoplePerHour = peoplePerHour;
   this.hour = 0;
@@ -123,10 +122,9 @@ function SentientBeing(homePlanet, language) { //creates a new SentientBeing wit
 
 //sb is a SentientBeing object
 function sayHello(sb) {
-  /*jshint validthis: true */
 
   console.log(hello[this.language]); //log hello in language of speaker
-  return hello[sb.language]; //log hello in language of listener
+  return hello[sb.language]; //return hello in language of listener
 
   // TODO: say hello prints out (console.log's) hello in the
   // language of the speaker, but returns it in the language
@@ -141,10 +139,10 @@ SentientBeing.prototype.sayHello = sayHello; //sayHello attached to SentientBein
 
 // TODO: create three subclasses of SentientBeing, one for each
 // species above (Klingon, Human, Romulan).
-function Human() {}
+function Human() {} //create base functions for subclasses
 function Klingon() {}
 function Romulan() {}
-Human.prototype = new SentientBeing('Earth', 'federation standard');
+Human.prototype = new SentientBeing('Earth', 'federation standard'); //pass subclass type to function
 Klingon.prototype = new SentientBeing('Qu\'nos', 'klingon');
 Romulan.prototype = new SentientBeing('Romulus', 'romulan');
 
@@ -180,18 +178,12 @@ assert((new Romulan()).sayHello(new Human()) === 'hello',
 
 function lastLetterSort(stringArray) {
   function byLastLetter(a, b) { //sort by alphabet based on last character in string
-    if (a.charAt(a.length - 1) < b.charAt(b.length - 1)) {
+    if (a.charAt(a.length - 1) < b.charAt(b.length - 1)) { //compare last letters of strings
       return -1;
     }
     if (a.charAt(a.length - 1) > b.charAt(b.length - 1)) {
       return 1;
     }
-    // stringArray.forEach(function(currentValue){
-    //   // var lastLetterOfWord = currentValue.slice(-1); //find last letter of each string
-    //   var lastLetterOfWord = currentValue.charAt(currentValue.length - 1);
-    //         //uses an alternate method to find last character of each string
-    // });
-
     //TODO: implement me. sort the strings in alphabetical
     // order using their last letter
     // Read this about how the sort function works:
@@ -238,7 +230,7 @@ var randomArray = [[1, 2, 3, 4], [10, 9, 8, 7, 6], [1, 1, 1, 1]];
 
 sumSort(randomArray); //calls sumSort function on randomArray
 
-//these asserts show that sumSort has sorted the array
+//these asserts confirm that sumSort has sorted the array
 assert(sumArray(randomArray[0]) === 4, 'the sum of first array in randomArray should be 4');
 assert(sumArray(randomArray[2]) === 40, 'the sum of the third array in randomArray should be 40');
 
@@ -249,3 +241,11 @@ assert(sumArray(randomArray[2]) === 40, 'the sum of the third array in randomArr
 // ./node_modules/.bin/grunt jshint
 // ./node_modules/.bin/grunt jscs
 //*********************************************************
+
+/* NOTE: jshint is throwing 'Possible strict violation' errors
+         for using 'this' in the universal translator.      */
+
+
+
+
+
