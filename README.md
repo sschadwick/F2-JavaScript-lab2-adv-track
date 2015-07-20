@@ -16,3 +16,8 @@ comments. Be sure to read everything. Run lab2.js with `node lab2.js`.
 
 
 #### Resources and Collaborators
+
+Collaboration with Jeff Cooper
+http://stackoverflow.com/questions/3884632/how-to-get-the-last-character-of-a-string
+Mozilla Developer Network
+Slack #sea-c50-javascript-f2
