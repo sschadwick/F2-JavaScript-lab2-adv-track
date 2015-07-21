@@ -138,7 +138,7 @@ function sumArray(numberArray) {
 }
 
 function sumSort(arrayOfArrays) {
-  arrayOfArrays.sort(function(item) {
+  arrayOfArrays.sort(function(a, b) {
     // TODO: implement me using sumArray
     //  order the arrays based on the sum of the numbers
     //  inside each array
